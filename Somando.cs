@@ -1,27 +1,36 @@
-﻿using System;
-
-namespace introCSharp
+﻿namespace Calculadora
 {
-    // publica class Calcular
-    public class Somando
+    class Calculadora
     {
-        // A função poderá ter parâmetros, porém, os valores serão solicitados na main
-        public static void Somar()
+        private double resultado;
+
+        public double Somar(double a, double b)
         {
-            Console.WriteLine("Somando dois números: ");
-            int num1, num2;
-            Console.WriteLine("Infome o primeiro número");
-            num1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Infome o segundo número");
-            num2 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine(num1 + num2);
-            // Para que a função tenha retorno é necessario mudar a tipagem void
-            // return num1 + num2;
+            resultado = a + b;
+            return resultado;
         }
 
-        public static int Subtrair(int num1, int num2)
+        public double Subtrair(double a, double b)
         {
-            return num1 - num2;
+            resultado = a - b;
+            return resultado;
+        }
+
+        public double Multiplicar(double a, double b)
+        {
+            resultado = a * b;
+            return resultado;
+        }
+
+        public double Dividir(double a, double b)
+        {
+            resultado = a / b;
+            return resultado;
+        }
+
+        public void Zerar()
+        {
+            resultado = 0;
         }
     }
 }
