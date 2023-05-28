@@ -1,51 +1,74 @@
 ﻿using System;
+using System.Windows.Forms;
 
-namespace introCSharp
+namespace LoginApp
 {
-    public class Program
+    static class Program
     {
-        static void Main(string[] args)
+        [STAThread]
+        static void Main()
         {
-            Console.WriteLine("Criando nosso primeiro objeto: ");
-            Pessoa pessoa1 = new Pessoa{
-                Nome = "João Pedro",
-                Idade = 20,
-                Email = "joaozinhoreidelas@hotmail.com",
-                Endereco = "João Costa",
-                Telefone = "(47) 99999-9999",
-            };
-            Console.WriteLine("Informações:\n" + pessoa1.ToString());
-            // Pessoa pessoa2 = new Pessoa{};
-            // pessoa2.Nome = "João Pedro";
-            // pessoa2.Idade = 20;
-            // pessoa2.Email = "joaozinhoreidelas@hotmail.com";
-            // pessoa2.Endereco = "João Costa";
-            // pessoa2.Telefone = "(47) 99999-9999";
-            // Console.WriteLine("Informações:\n" + pessoa2.ToString());
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new LoginForm());
+        }
+    }
 
-            int numeroPessoas = 5;
-            Pessoa[] pessoas = new Pessoa[numeroPessoas];
-            
-            decimal mediaIdade = 0;
-            // fazer o calculo da media de idade
-            for (int i = 0; i < numeroPessoas; i++) {
-                mediaIdade += Convert.ToDecimal(pessoas[i]);
-            }
-            mediaIdade = mediaIdade / numeroPessoas;
-            Console.WriteLine("A media de idade é: " + mediaIdade);
+    public class LoginForm : Form
+    {
+        private Label lblUsername;
+        private Label lblPassword;
+        private TextBox txtUsername;
+        private TextBox txtPassword;
+        private Button btnLogin;
 
-            // Buscando pessoa
+        public LoginForm()
+        {
+            lblUsername = new Label();
+            lblUsername.Text = "Username:";
+            lblUsername.Location = new System.Drawing.Point(20, 20);
 
-            Console.WriteLine("Digite o nome da pessoa para buscar: ");
-            string nome = Console.ReadLine();
-            for (int i = 0; i < numeroPessoas; i++)
+            txtUsername = new TextBox();
+            txtUsername.Location = new System.Drawing.Point(100, 20);
+
+            lblPassword = new Label();
+            lblPassword.Text = "Password:";
+            lblPassword.Location = new System.Drawing.Point(20, 50);
+
+            txtPassword = new TextBox();
+            txtPassword.Location = new System.Drawing.Point(100, 50);
+            txtPassword.PasswordChar = '*';
+
+            btnLogin = new Button();
+            btnLogin.Text = "Login";
+            btnLogin.Location = new System.Drawing.Point(100, 80);
+            btnLogin.Click += BtnLogin_Click;
+
+            Controls.Add(lblUsername);
+            Controls.Add(txtUsername);
+            Controls.Add(lblPassword);
+            Controls.Add(txtPassword);
+            Controls.Add(btnLogin);
+
+            Size = new System.Drawing.Size(300, 150);
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Login";
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            if (username == "admin" && password == "12345")
             {
-                if (pessoas[i].Nome == nome)
-                {
-                    Console.WriteLine(pessoas[i]);
-                }
+                MessageBox.Show("Login successful!");
+            }
+            else
+            {
+                MessageBox.Show("Incorrect username or password. Please try again.");
             }
         }
     }
 }
-
