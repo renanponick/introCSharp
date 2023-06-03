@@ -6,7 +6,7 @@ namespace introCSharp
     class Program
     {
         static void Main(string[] args) {  
-            int op =0;
+            int op = 0;
             do{
                 Console.WriteLine("\n\n");
                 Console.WriteLine("Informe uma opção abaixo: ");

@@ -15,12 +15,12 @@ namespace Models
             string endereco,
             bool vivo = true
         ) {
-            Nome = nome
-            Idade = idade
-            Endereco = endereco
-            Vivo = vivo
+            Nome = nome;
+            Idade = idade;
+            Endereco = endereco;
+            Vivo = vivo;
 
-            Repositories.PessoaRepository.addPessoas(this)
+            Repositories.PessoaRepository.addPessoas(this);
         }
 
         public void Apresentar() {

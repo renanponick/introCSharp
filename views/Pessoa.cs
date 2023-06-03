@@ -20,12 +20,11 @@ namespace Views
                 idade = Convert.ToInt32(Console.ReadLine());
 
                 Console.WriteLine("Está vivo? 0 - sim / 1 - não");
-                vivo = Convert.ToBool(Console.ReadLine());
+                vivo = Convert.ToBoolean(Console.ReadLine());
 
-
-                Controllers.PessoaController.addPessoa(nome, endereco, idade, vivo);
+                Controllers.PessoaController.addPessoa(nome, idade, endereco, vivo);
             }catch(Exception e){
-                    Console.WriteLine($"Erro: {e}");
+                Console.WriteLine($"Erro: {e}");
             }
         }
 
