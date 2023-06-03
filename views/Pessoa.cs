@@ -31,8 +31,8 @@ namespace Views
         public static void ListarPessoas(){
             Console.WriteLine(" - Lista de Pessoas cadastrados - ");
 
-            foreach(Models.Pessoa Pessoa in Controllers.Pessoa.ListarPessoas()){
-                Console.WriteLine(Pessoa);
+            foreach(Models.Pessoa pessoa in Controllers.PessoaController.ListarPessoas()){
+                Console.WriteLine(pessoa);
             }
         }
     }
