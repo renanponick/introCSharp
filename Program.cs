@@ -19,8 +19,15 @@ namespace Calculadora
 
                 if (opcao == "1")
                 {
-                    Console.Write("Digite o primeiro número: ");
-                    double num1 = double.Parse(Console.ReadLine());
+                    double num1 = 0;
+
+                    if(resultado == 0){
+                        Console.Write("Digite o primeiro número: ");
+                        num1 = double.Parse(Console.ReadLine());
+
+                    } else {
+                        num1 = resultado;
+                    }
 
                     Console.Write("Digite a operação (+, -, *, /): ");
                     string operacao = Console.ReadLine();
