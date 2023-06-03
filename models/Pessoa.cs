@@ -31,7 +31,7 @@ namespace Models
         }
 
         public override string ToString(){
-            return $"----\n Nome: {Nome}\nIdade: {Idade}\nEndereço: {Endereco}\n Login: {Login}\n Email: {Email}\n Senha: {Senha}";
+            return $"----\n Nome: {Nome}\nIdade: {Idade}\nEndereço: {Endereco}\n Login: {Login}\n Email: {Email}\n Senha: {Senha}\n Vivo: {Vivo}";
         }
         
     }

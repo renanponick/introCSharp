@@ -14,7 +14,7 @@ namespace Controllers
             new Models.Pessoa(nome, idade, endereco, vivo);
         }
 
-        public static List<Pessoa> ListarPessoas(){
+        public static List<Models.Pessoa> ListarPessoas(){
             return Repositories.PessoaRepository.getPessoas();
         }
         

@@ -5,7 +5,7 @@ namespace introCSharp
 {
     class Program
     {
-        static void Main(string[] args) {  
+        static void Main(string[] args) {
             int op = 0;
             do{
                 Console.WriteLine("\n\n");

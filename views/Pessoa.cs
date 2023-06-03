@@ -19,8 +19,8 @@ namespace Views
                 Console.WriteLine("Digite a idade: ");
                 idade = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("Está vivo? 0 - sim / 1 - não");
-                vivo = Convert.ToBoolean(Console.ReadLine());
+                Console.WriteLine("Está vivo? 0 - Não / 1 - Sim");
+                vivo = Convert.ToBoolean(Convert.ToInt32(Console.ReadLine()));
 
                 Controllers.PessoaController.addPessoa(nome, idade, endereco, vivo);
             }catch(Exception e){
