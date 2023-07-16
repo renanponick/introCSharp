@@ -1,6 +1,6 @@
-﻿namespace Calculadora
+﻿namespace Programa
 {
-    class Calculadora
+    public class Calculadora
     {
         private double resultado;
 

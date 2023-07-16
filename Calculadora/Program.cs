@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Calculadora
+namespace Programa
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             Calculadora calculadora = new Calculadora();
             double resultado = 0;
